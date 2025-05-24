@@ -21,7 +21,7 @@ export function CreativeSection() {
       title: "Diseño Web",
       description:
         "Creamos sitios web a medida que combinan estética y funcionalidad para ofrecer experiencias digitales excepcionales.",
-      image: "/placeholder.svg?height=600&width=800",
+      image: "./images/solucion1.webp",
       features: [
         "Diseño UI/UX personalizado",
         "Experiencias interactivas",
@@ -36,7 +36,7 @@ export function CreativeSection() {
       title: "E-Commerce",
       description:
         "Desarrollamos tiendas online que convierten visitantes en clientes, con diseños atractivos y funcionalidades avanzadas.",
-      image: "/placeholder.svg?height=600&width=800",
+      image: "./images/solucion2.webp",
       features: [
         "Catálogos de productos",
         "Pasarelas de pago seguras",
@@ -51,7 +51,7 @@ export function CreativeSection() {
       title: "Aplicaciones Web",
       description:
         "Creamos aplicaciones web personalizadas que automatizan procesos y mejoran la eficiencia de tu negocio.",
-      image: "/placeholder.svg?height=600&width=800",
+      image: "./images/solucion3.webp",
       features: [
         "Desarrollo a medida",
         "Interfaces intuitivas",

@@ -27,18 +27,18 @@ export function About() {
       title: "Una historia de pasión y creatividad",
       content:
         "Fundada por un equipo de diseñadores y desarrolladores apasionados, Sevify nació con la misión de transformar la forma en que las empresas se presentan en el mundo digital. Desde nuestros inicios, nos hemos dedicado a crear experiencias web excepcionales que combinan diseño innovador, tecnología avanzada y estrategias efectivas.",
-      image: "/placeholder.svg?height=400&width=600",
+      image: "./images/about1.webp",
       stats: [
-        { label: "Año de fundación", value: "2018" },
-        { label: "Proyectos completados", value: "200+" },
-        { label: "Clientes satisfechos", value: "100+" },
+        { label: "Webs", value: "Modernas" },
+        { label: "Entrega", value: "Rápida" },
+        { label: "Soporte", value: "Directo" }
       ],
     },
     {
       title: "Transformar ideas en experiencias digitales",
       content:
         "Nuestra misión es ayudar a empresas de todos los tamaños a destacar en el mundo digital a través de soluciones web personalizadas que no solo se ven increíbles, sino que también generan resultados. Nos esforzamos por combinar creatividad, tecnología y estrategia para crear sitios web que cautiven a los usuarios y cumplan con los objetivos de negocio de nuestros clientes.",
-      image: "/placeholder.svg?height=400&width=600",
+      image: "./images/about2.webp",
       stats: [
         { label: "Tasa de conversión", value: "+40%" },
         { label: "Tiempo de carga", value: "<2s" },
@@ -49,7 +49,7 @@ export function About() {
       title: "Los principios que guían nuestro trabajo",
       content:
         "En Sevify, nos guiamos por valores fundamentales que definen nuestra forma de trabajar y relacionarnos con nuestros clientes. Creemos en la excelencia, la innovación constante, la transparencia en cada etapa del proceso y el compromiso con los resultados. Estos valores nos permiten ofrecer un servicio excepcional y construir relaciones duraderas con nuestros clientes.",
-      image: "/placeholder.svg?height=400&width=600",
+      image: "./images/about3.webp",
       stats: [
         { label: "Innovación", value: "Constante" },
         { label: "Compromiso", value: "Total" },

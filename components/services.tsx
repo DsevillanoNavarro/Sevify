@@ -21,7 +21,7 @@ export function Services() {
         "Creamos diseños web atractivos, modernos y funcionales que cautivan a tus visitantes y reflejan la identidad de tu marca.",
       icon: <Palette className="h-10 w-10 text-primary" />,
       features: ["Diseño UI/UX personalizado", "Wireframes y prototipos", "Diseño responsive", "Identidad visual"],
-      image: "/placeholder.svg?height=600&width=800",
+      image: "./images/services1.webp",
     },
     {
       id: "development",
@@ -30,7 +30,7 @@ export function Services() {
         "Desarrollamos sitios web a medida con las últimas tecnologías, garantizando un rendimiento óptimo y una experiencia de usuario excepcional.",
       icon: <Code className="h-10 w-10 text-primary" />,
       features: ["Desarrollo frontend y backend", "Sitios web corporativos", "Aplicaciones web", "Integraciones API"],
-      image: "/placeholder.svg?height=600&width=800",
+      image: "./images/services2.webp",
     },
     {
       id: "ecommerce",
@@ -44,7 +44,7 @@ export function Services() {
         "Gestión de inventario",
         "Experiencia de compra optimizada",
       ],
-      image: "/placeholder.svg?height=600&width=800",
+      image: "./images/services3.webp",
     },
     {
       id: "optimization",
@@ -58,7 +58,7 @@ export function Services() {
         "Análisis de conversión",
         "Experiencia de usuario mejorada",
       ],
-      image: "/placeholder.svg?height=600&width=800",
+      image: "./images/services4.webp",
     },
     {
       id: "mobile",
@@ -72,7 +72,7 @@ export function Services() {
         "Rendimiento rápido en móviles",
         "Diseño adaptativo",
       ],
-      image: "/placeholder.svg?height=600&width=800",
+      image: "./images/services4.webp",
     },
     {
       id: "performance",

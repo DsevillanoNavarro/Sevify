@@ -19,7 +19,7 @@ export function Portfolio() {
     {
       title: "Peluquería Moderna",
       description: "Diseño web para una peluquería con sistema de reservas online",
-      image: "/placeholder.svg?height=600&width=800",
+      image: "./images/peluqueria1.webp",
       tags: ["Diseño Web", "Reservas", "SEO"],
       color: "from-pink-500/20 to-purple-500/20",
       url: "#portfolio-0", // Añadir esta línea
@@ -42,48 +42,49 @@ export function Portfolio() {
           "Incremento del 25% en clientes nuevos",
         ],
         screenshots: [
-          "/placeholder.svg?height=600&width=800",
-          "/placeholder.svg?height=600&width=800",
-          "/placeholder.svg?height=600&width=800",
+          "./images/peluqueria2.webp",
+          "./images/peluqueria3.webp",
+          "./images/peluqueria4.webp",
         ],
       },
     },
     {
-      title: "Restaurante Gourmet",
-      description: "Sitio web para restaurante con menú digital y sistema de pedidos",
-      image: "/placeholder.svg?height=600&width=800",
-      tags: ["E-Commerce", "Diseño Web", "Pedidos Online"],
-      color: "from-amber-500/20 to-red-500/20",
-      url: "#portfolio-1", // Añadir esta línea
+      title: "Papelería Creativa",
+      description: "Sitio web para papelería con catálogo digital y sistema de reservas de productos",
+      image: "./images/papeleriamagica1.webp",
+      tags: ["Catálogo Online", "Diseño Web", "Negocio Local"],
+      color: "from-emerald-400/20 to-yellow-300/20",
+      url: "#portfolio-2", // Añadir esta línea
       details: {
         challenge:
-          "El restaurante buscaba modernizar su presencia digital y ofrecer un sistema de pedidos a domicilio propio para reducir dependencia de plataformas externas.",
+          "La papelería necesitaba digitalizar su catálogo de productos y permitir a los clientes reservar artículos para recogida en tienda.",
         solution:
-          "Creamos un sitio web atractivo con un sistema de pedidos integrado, menú digital interactivo y gestión de reservas de mesas.",
+          "Diseñamos un sitio web visualmente atractivo con un catálogo digital interactivo, sistema de reservas y sección de promociones semanales.",
         features: [
-          "Menú digital con imágenes, descripciones y alérgenos",
-          "Sistema de pedidos online con seguimiento en tiempo real",
-          "Reserva de mesas con selección visual",
-          "Panel de administración para gestionar pedidos y reservas",
-          "Integración con sistema de TPV",
+          "Catálogo digital con categorías y buscador inteligente",
+          "Sistema de reserva de productos con horarios de recogida",
+          "Sección de productos destacados y promociones",
+          "Panel administrativo para gestión de productos y reservas",
+          "Formulario de contacto y localización mediante Google Maps",
         ],
-        technologies: ["React.js", "Next.js", "Tailwind CSS", "Supabase", "Stripe", "Firebase"],
+        technologies: ["React.js", "Next.js", "Tailwind CSS", "Firebase", "EmailJS"],
         results: [
-          "Incremento del 35% en pedidos a domicilio",
-          "Reducción del 25% en comisiones a plataformas externas",
-          "Aumento del 15% en reservas de mesas",
+          "Aumento del 40% en consultas y reservas a través del sitio web",
+          "Reducción del tiempo de atención en tienda",
+          "Mayor visibilidad local gracias al SEO y diseño responsive",
         ],
         screenshots: [
-          "/placeholder.svg?height=600&width=800",
-          "/placeholder.svg?height=600&width=800",
-          "/placeholder.svg?height=600&width=800",
+          "./images/papeleriamagica2.webp",
+          "./images/papeleriamagica3.webp",
+          "./images/papeleriamagica4.webp",
         ],
       },
     },
+    
     {
       title: "Autoescuela Sevilla",
       description: "Plataforma web para autoescuela con área de estudiantes",
-      image: "/placeholder.svg?height=600&width=800",
+      image: "./images/autoescuelapro1.webp",
       tags: ["Plataforma Web", "Área Privada", "Responsive"],
       color: "from-blue-500/20 to-cyan-500/20",
       url: "#portfolio-2", // Añadir esta línea
@@ -107,9 +108,9 @@ export function Portfolio() {
           "Aumento del 25% en nuevas matriculaciones",
         ],
         screenshots: [
-          "/placeholder.svg?height=600&width=800",
-          "/placeholder.svg?height=600&width=800",
-          "/placeholder.svg?height=600&width=800",
+          "./images/autoescuelapro2.webp",
+          "./images/autoescuelapro3.webp",
+          "./images/autoescuelapro4.webp",
         ],
       },
     },

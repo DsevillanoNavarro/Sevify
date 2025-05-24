@@ -24,97 +24,97 @@ export function Technologies() {
     {
       name: "React",
       description: "Biblioteca JavaScript para construir interfaces de usuario interactivas",
-      icon: "/placeholder.svg?height=80&width=80",
+      icon: "/icons/react.svg",
       categories: ["frontend"],
     },
     {
       name: "TypeScript",
       description: "Superset de JavaScript con tipado estático",
-      icon: "/placeholder.svg?height=80&width=80",
+      icon: "/icons/typescript.svg",
       categories: ["frontend", "backend"],
     },
     {
       name: "Tailwind CSS",
       description: "Framework CSS utilitario para diseño rápido y responsivo",
-      icon: "/placeholder.svg?height=80&width=80",
+      icon: "/icons/tailwindcss.svg",
       categories: ["frontend", "design"],
     },
     {
       name: "Bootstrap",
       description: "Framework CSS para crear sitios web responsivos y móviles",
-      icon: "/placeholder.svg?height=80&width=80",
+      icon: "/icons/bootstrap.svg",
       categories: ["frontend", "design"],
     },
     {
       name: "Figma",
       description: "Herramienta de diseño de interfaces y prototipado colaborativo",
-      icon: "/placeholder.svg?height=80&width=80",
+      icon: "/icons/figma.svg",
       categories: ["design"],
     },
     {
       name: "PostgreSQL",
       description: "Sistema de gestión de bases de datos relacional",
-      icon: "/placeholder.svg?height=80&width=80",
+      icon: "/icons/postgresql.svg",
       categories: ["backend"],
     },
     {
       name: "MongoDB",
       description: "Base de datos NoSQL orientada a documentos",
-      icon: "/placeholder.svg?height=80&width=80",
+      icon: "/icons/mongodb.svg",
       categories: ["backend"],
     },
     {
       name: "Docker",
       description: "Plataforma para desarrollar, enviar y ejecutar aplicaciones en contenedores",
-      icon: "/placeholder.svg?height=80&width=80",
+      icon: "/icons/docker.svg",
       categories: ["tools"],
     },
     {
       name: "Git",
       description: "Sistema de control de versiones distribuido",
-      icon: "/placeholder.svg?height=80&width=80",
+      icon: "/icons/git.svg",
       categories: ["tools"],
     },
     {
       name: "Vercel",
       description: "Plataforma para despliegue y alojamiento de aplicaciones web",
-      icon: "/placeholder.svg?height=80&width=80",
+      icon: "/icons/vercel.svg",
       categories: ["tools"],
     },
     {
       name: "JavaScript",
       description: "Lenguaje de programación interpretado para desarrollo web",
-      icon: "/placeholder.svg?height=80&width=80",
+      icon: "/icons/javascript.svg",
       categories: ["frontend", "backend"],
     },
     {
       name: "HTML",
       description: "Lenguaje de marcado para la estructura de páginas web",
-      icon: "/placeholder.svg?height=80&width=80",
+      icon: "/icons/html5.svg",
       categories: ["frontend"],
     },
     {
       name: "CSS",
       description: "Lenguaje de estilos para el diseño visual de páginas web",
-      icon: "/placeholder.svg?height=80&width=80",
+      icon: "/icons/css.svg",
       categories: ["frontend", "design"],
     },
     {
       name: "Django",
       description: "Framework de desarrollo web de alto nivel en Python",
-      icon: "/placeholder.svg?height=80&width=80",
+      icon: "/icons/django.svg",
       categories: ["backend"],
     },
     {
       name: "Python",
       description: "Lenguaje de programación interpretado, de alto nivel y propósito general",
-      icon: "/placeholder.svg?height=80&width=80",
+      icon: "/icons/python.svg",
       categories: ["backend"],
     },
     {
-      name: "Java",
-      description: "Lenguaje de programación orientado a objetos de propósito general",
-      icon: "/placeholder.svg?height=80&width=80",
+      name: "MySQL",
+      description: "Sistema de gestión de bases de datos relacional, rápido y confiable para almacenar y consultar datos",
+      icon: "/icons/mysql.svg",
       categories: ["backend"],
     },
   ]
@@ -177,7 +177,7 @@ export function Technologies() {
                 <CardContent className="p-4 md:p-6 flex flex-col items-center text-center h-full">
                   <div className="mb-3 md:mb-4 p-2 md:p-3 rounded-full bg-primary/10 w-16 h-16 md:w-20 md:h-20 flex items-center justify-center flex-shrink-0">
                     <Image
-                      src={tech.icon || "/placeholder.svg"}
+                      src={tech.icon}
                       alt={tech.name}
                       width={40}
                       height={40}

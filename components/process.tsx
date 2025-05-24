@@ -55,13 +55,12 @@ export function Process() {
       title: "Desarrollo",
       description:
         "Transformamos los diseños en código, construyendo tu sitio web con las tecnologías más adecuadas para tu proyecto.",
-      details: [
-        "Desarrollo frontend (HTML, CSS, JavaScript)",
-        "Desarrollo backend y bases de datos",
-        "Integración de CMS si es necesario",
-        "Implementación de funcionalidades específicas",
-        "Optimización de rendimiento",
-      ],
+        details: [
+          "Desarrollo frontend",
+          "Desarrollo backend y bases de datos",
+          "Implementación de funcionalidades específicas",
+          "Optimización de rendimiento"
+        ],
     },
     {
       icon: <Rocket className="h-8 w-8" />,

@@ -13,8 +13,21 @@ export function Footer() {
     { icon: <Instagram className="h-5 w-5" />, url: "#", name: "Instagram" },
     {
       icon: (
-        <svg className="h-5 w-5" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-          <path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-2.08v5.11a2.92 2.92 0 01-2.92 2.92 2.92 2.92 0 01-2.92-2.92V2H6.82v5.11a4.83 4.83 0 01-3.77 4.25v1.75a6.59 6.59 0 002.08.33 6.59 6.59 0 005.94-3.72 6.59 6.59 0 005.94 3.72 6.59 6.59 0 002.08-.33V6.69z" />
+        <svg className="h-6 w-6" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M19.59 6.69C19.51 6.38 19.35 6.1 19.14 5.87C18.92 5.65 18.66 5.48 18.36 5.39C16.74 5 12 5 12 5C12 5 7.26 5 5.64 5.39C5.34 5.48 5.08 5.65 4.86 5.87C4.64 6.1 4.49 6.38 4.41 6.69C4.02 8.37 4.02 11.05 4.02 11.05C4.02 11.05 4.02 13.73 4.41 15.41C4.49 15.72 4.64 16 4.86 16.23C5.08 16.45 5.34 16.62 5.64 16.71C7.26 17.1 12 17.1 12 17.1C12 17.1 16.74 17.1 18.36 16.71C18.66 16.62 18.92 16.45 19.14 16.23C19.35 16 19.51 15.72 19.59 15.41C19.98 13.73 19.98 11.05 19.98 11.05C19.98 11.05 19.98 8.37 19.59 6.69Z"
+            stroke="currentColor"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
+          <path
+            d="M10 14.11V8L15 11.06L10 14.11Z"
+            stroke="currentColor"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
         </svg>
       ),
       url: "#",
