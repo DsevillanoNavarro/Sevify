@@ -34,7 +34,7 @@ export function Contact() {
     {
       icon: <Mail className="h-6 w-6 text-primary" />,
       title: "Email",
-      details: "info@sevify.com",
+      details: "administracion@sevify.es",
     },
     {
       icon: <Clock className="h-6 w-6 text-primary" />,

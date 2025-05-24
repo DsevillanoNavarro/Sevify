@@ -22,7 +22,7 @@ export function Portfolio() {
       image: "./images/peluqueria1.webp",
       tags: ["Diseño Web", "Reservas", "SEO"],
       color: "from-pink-500/20 to-purple-500/20",
-      url: "#portfolio-0", // Añadir esta línea
+      url: "https://peluqueriasevify.netlify.app", // Añadir esta línea
       details: {
         challenge:
           "La peluquería necesitaba una presencia online moderna que reflejara su estilo y permitiera a los clientes reservar citas fácilmente.",
@@ -54,7 +54,7 @@ export function Portfolio() {
       image: "./images/papeleriamagica1.webp",
       tags: ["Catálogo Online", "Diseño Web", "Negocio Local"],
       color: "from-emerald-400/20 to-yellow-300/20",
-      url: "#portfolio-2", // Añadir esta línea
+      url: "https://papeleriasevify.netlify.app/", // Añadir esta línea
       details: {
         challenge:
           "La papelería necesitaba digitalizar su catálogo de productos y permitir a los clientes reservar artículos para recogida en tienda.",
@@ -87,7 +87,7 @@ export function Portfolio() {
       image: "./images/autoescuelapro1.webp",
       tags: ["Plataforma Web", "Área Privada", "Responsive"],
       color: "from-blue-500/20 to-cyan-500/20",
-      url: "#portfolio-2", // Añadir esta línea
+      url: "https://autoescuelasevify.netlify.app/", // Añadir esta línea
       details: {
         challenge:
           "La autoescuela necesitaba digitalizar sus procesos de enseñanza y ofrecer a sus alumnos recursos online para complementar las clases presenciales.",

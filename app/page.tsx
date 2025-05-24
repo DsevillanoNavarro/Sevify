@@ -20,6 +20,11 @@ export const metadata: Metadata = {
     "diseño web Sevilla",
     "desarrollo web Sevilla",
   ],
+  icons: {
+    icon: "./favicon.ico", // ruta relativa en public/
+    shortcut: "./favicon.ico", // para navegadores que usan shortcut icon
+    apple: "./apple-touch-icon.png", // si tienes icono para iOS
+  },
 }
 
 export default function Home() {
