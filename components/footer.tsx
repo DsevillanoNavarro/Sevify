@@ -8,9 +8,7 @@ export function Footer() {
   const currentYear = new Date().getFullYear()
 
   const socialLinks = [
-    { icon: <Facebook className="h-5 w-5" />, url: "#", name: "Facebook" },
-    { icon: <Linkedin className="h-5 w-5" />, url: "#", name: "LinkedIn" },
-    { icon: <Instagram className="h-5 w-5" />, url: "#", name: "Instagram" },
+    { icon: <Instagram className="h-5 w-5" />, url: "https://www.instagram.com/sevifyweb/", name: "Instagram" },
     {
       icon: (
         <svg className="h-6 w-6" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -30,7 +28,7 @@ export function Footer() {
           />
         </svg>
       ),
-      url: "#",
+      url: "https://www.tiktok.com/@sevifyweb?lang=es",
       name: "TikTok",
     },
   ]

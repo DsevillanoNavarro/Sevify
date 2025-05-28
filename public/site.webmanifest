@@ -1,1 +1,50 @@
-{"name":"","short_name":"","icons":[{"src":"/android-chrome-192x192.png","sizes":"192x192","type":"image/png"},{"src":"/android-chrome-512x512.png","sizes":"512x512","type":"image/png"}],"theme_color":"#ffffff","background_color":"#ffffff","display":"standalone"}
+{
+  "name": "Sevify - Diseño Web Profesional",
+  "short_name": "Sevify",
+  "description": "Agencia de diseño web profesional en Sevilla especializada en experiencias digitales modernas y funcionales",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#000000",
+  "orientation": "portrait-primary",
+  "scope": "/",
+  "lang": "es",
+  "categories": ["business", "productivity", "design"],
+  "icons": [
+    {
+      "src": "/android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "/android-chrome-512x512.png", 
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable any"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Servicios",
+      "short_name": "Servicios",
+      "description": "Ver nuestros servicios de diseño web",
+      "url": "/#services",
+      "icons": [{ "src": "/icon-services.png", "sizes": "96x96" }]
+    },
+    {
+      "name": "Portfolio",
+      "short_name": "Portfolio", 
+      "description": "Ver nuestros trabajos realizados",
+      "url": "/#portfolio",
+      "icons": [{ "src": "/icon-portfolio.png", "sizes": "96x96" }]
+    },
+    {
+      "name": "Contacto",
+      "short_name": "Contacto",
+      "description": "Contactar con nosotros",
+      "url": "/#contact", 
+      "icons": [{ "src": "/icon-contact.png", "sizes": "96x96" }]
+    }
+  ]
+}

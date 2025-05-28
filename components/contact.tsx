@@ -1,17 +1,18 @@
 "use client"
 
 import type React from "react"
-
 import { motion, useInView } from "framer-motion"
 import { useRef, useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
-import { MapPin, Phone, Mail, Clock, Send, Facebook, Instagram, Linkedin, CheckCircle, X } from "lucide-react"
+import { MapPin, Mail, Clock, Send, Instagram, CheckCircle, X } from "lucide-react"
+import { useToast } from "@/hooks/use-toast"
 
 export function Contact() {
   const ref = useRef(null)
   const isInView = useInView(ref, { once: false, amount: 0.2 })
+  const { toast } = useToast()
   const [formState, setFormState] = useState({
     name: "",
     email: "",
@@ -27,26 +28,23 @@ export function Contact() {
       details: "Calle Sierpes 48, 41004 Sevilla, España",
     },
     {
-      icon: <Phone className="h-6 w-6 text-primary" />,
-      title: "Teléfono",
-      details: "+34 954 123 456",
-    },
-    {
       icon: <Mail className="h-6 w-6 text-primary" />,
       title: "Email",
       details: "administracion@sevify.es",
     },
     {
       icon: <Clock className="h-6 w-6 text-primary" />,
-      title: "Horario",
-      details: "Lunes - Viernes: 9:00 - 18:00",
+      title: "Disponibilidad",
+      details: "Respuesta en 24 horas",
     },
   ]
 
   const socialLinks = [
-    { icon: <Facebook className="h-6 w-6" />, url: "#", name: "Facebook" },
-    { icon: <Linkedin className="h-6 w-6" />, url: "#", name: "LinkedIn" },
-    { icon: <Instagram className="h-6 w-6" />, url: "#", name: "Instagram" },
+    {
+      icon: <Instagram className="h-6 w-6" />,
+      url: "https://www.instagram.com/sevifyweb/",
+      name: "Instagram",
+    },
     {
       icon: (
         <svg className="h-6 w-6" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -66,7 +64,7 @@ export function Contact() {
           />
         </svg>
       ),
-      url: "#",
+      url: "https://www.tiktok.com/@sevifyweb?lang=es",
       name: "TikTok",
     },
   ]
@@ -89,20 +87,37 @@ export function Contact() {
         body: JSON.stringify(formState),
       })
 
+      const data = await response.json()
+
       if (response.ok) {
         setFormStatus("success")
-        // Reset form after 3 seconds
+        toast({
+          title: "Mensaje enviado",
+          description: `Tu mensaje ha sido enviado correctamente a administracion@sevify.es`,
+        })
+
+        // Reset form after success
         setTimeout(() => {
           setFormState({ name: "", email: "", subject: "", message: "" })
           setFormStatus("idle")
         }, 3000)
       } else {
         setFormStatus("error")
+        toast({
+          title: "Error",
+          description: data.error || "Ha ocurrido un error al enviar el mensaje",
+          variant: "destructive",
+        })
         setTimeout(() => setFormStatus("idle"), 3000)
       }
     } catch (error) {
       console.error("Error sending email:", error)
       setFormStatus("error")
+      toast({
+        title: "Error de conexión",
+        description: "No se ha podido conectar con el servidor. Por favor, inténtalo de nuevo.",
+        variant: "destructive",
+      })
       setTimeout(() => setFormStatus("idle"), 3000)
     }
   }
@@ -148,20 +163,21 @@ export function Contact() {
               ))}
             </div>
 
-            {/* Reemplazado el mapa con una sección de redes sociales interactiva */}
             <div className="bg-card rounded-xl p-8 border shadow-md">
               <h3 className="text-xl font-bold mb-6">Síguenos en redes sociales</h3>
 
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+              <div className="grid grid-cols-2 gap-6">
                 {socialLinks.map((social, index) => (
                   <motion.a
                     key={index}
                     href={social.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="flex flex-col items-center gap-3 p-4 rounded-lg hover:bg-accent/10 transition-colors"
                     whileHover={{ y: -5 }}
                     whileTap={{ scale: 0.95 }}
                   >
-                    <div className="p-4 rounded-full bg-primary/10 text-primary contact-social-icon">{social.icon}</div>
+                    <div className="p-4 rounded-full bg-primary/10 text-primary">{social.icon}</div>
                     <span className="text-sm font-medium">{social.name}</span>
                   </motion.a>
                 ))}
@@ -181,7 +197,7 @@ export function Contact() {
               <div className="relative z-10 bg-card rounded-xl p-8 border shadow-md">
                 <h3 className="text-xl font-bold mb-6">Envíanos un mensaje</h3>
 
-                {formStatus === "success" ? (
+                {formStatus === "success" && (
                   <motion.div
                     initial={{ opacity: 0, y: 10 }}
                     animate={{ opacity: 1, y: 0 }}
@@ -192,10 +208,11 @@ export function Contact() {
                     </div>
                     <h4 className="text-xl font-bold mb-2">¡Mensaje enviado!</h4>
                     <p className="text-muted-foreground">
-                      Gracias por contactarnos. Nos pondremos en contacto contigo lo antes posible.
+                      Gracias por contactarnos. Tu mensaje ha sido enviado a administracion@sevify.es.
                     </p>
                   </motion.div>
-                ) : null}
+                )}
+
                 {formStatus === "error" && (
                   <motion.div
                     initial={{ opacity: 0, y: 10 }}
@@ -211,72 +228,60 @@ export function Contact() {
                     </p>
                   </motion.div>
                 )}
-                {formStatus !== "success" && formStatus !== "error" ? (
-                  <form className="space-y-6" onSubmit={handleSubmit} aria-label="Formulario de contacto">
+
+                {formStatus !== "success" && formStatus !== "error" && (
+                  <form className="space-y-6" onSubmit={handleSubmit}>
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                      <div className="contact-form-field">
+                      <div>
                         <Input
                           id="name"
                           name="name"
                           value={formState.name}
                           onChange={handleInputChange}
-                          placeholder=" "
+                          placeholder="Nombre"
                           required
                           aria-label="Nombre"
-                          aria-required="true"
                         />
-                        <label htmlFor="name">Nombre</label>
                       </div>
-                      <div className="contact-form-field">
+                      <div>
                         <Input
                           id="email"
                           name="email"
                           type="email"
                           value={formState.email}
                           onChange={handleInputChange}
-                          placeholder=" "
+                          placeholder="Email"
                           required
                           aria-label="Email"
-                          aria-required="true"
                         />
-                        <label htmlFor="email">Email</label>
                       </div>
                     </div>
-                    <div className="contact-form-field">
+                    <div>
                       <Input
                         id="subject"
                         name="subject"
                         value={formState.subject}
                         onChange={handleInputChange}
-                        placeholder=" "
+                        placeholder="Asunto"
                         required
                         aria-label="Asunto"
-                        aria-required="true"
                       />
-                      <label htmlFor="subject">Asunto</label>
                     </div>
-                    <div className="contact-form-field">
+                    <div>
                       <Textarea
                         id="message"
                         name="message"
                         value={formState.message}
                         onChange={handleInputChange}
-                        placeholder=" "
+                        placeholder="Mensaje"
                         className="min-h-[120px]"
                         required
                         aria-label="Mensaje"
-                        aria-required="true"
                       />
-                      <label htmlFor="message">Mensaje</label>
                     </div>
-                    <Button
-                      type="submit"
-                      className="w-full"
-                      disabled={formStatus === "submitting"}
-                      aria-label="Enviar mensaje de contacto"
-                    >
+                    <Button type="submit" className="w-full" disabled={formStatus === "submitting"}>
                       {formStatus === "submitting" ? (
-                        <span className="flex items-center gap-2" aria-hidden="true">
+                        <span className="flex items-center gap-2">
                           <svg
                             className="animate-spin -ml-1 mr-2 h-4 w-4 text-white"
                             xmlns="http://www.w3.org/2000/svg"
@@ -290,24 +295,23 @@ export function Contact() {
                               r="10"
                               stroke="currentColor"
                               strokeWidth="4"
-                            ></circle>
+                            />
                             <path
                               className="opacity-75"
                               fill="currentColor"
                               d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
-                            ></path>
+                            />
                           </svg>
-                          <span>Enviando...</span>
-                          <span className="sr-only">Enviando mensaje, por favor espere</span>
+                          Enviando...
                         </span>
                       ) : (
                         <>
-                          Enviar Mensaje <Send className="ml-2 h-4 w-4" aria-hidden="true" />
+                          Enviar Mensaje <Send className="ml-2 h-4 w-4" />
                         </>
                       )}
                     </Button>
                   </form>
-                ) : null}
+                )}
               </div>
             </div>
           </motion.div>

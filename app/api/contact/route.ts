@@ -1,5 +1,4 @@
 import { type NextRequest, NextResponse } from "next/server"
-import nodemailer from "nodemailer"
 
 export async function POST(request: NextRequest) {
   try {
@@ -10,21 +9,50 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({ error: "Todos los campos son obligatorios" }, { status: 400 })
     }
 
-    // Configurar el transportador de email
-    const transporter = nodemailer.createTransporter({
+    // Validar formato de email
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+    if (!emailRegex.test(email)) {
+      return NextResponse.json({ error: "Formato de email inválido" }, { status: 400 })
+    }
+
+    // Email de destino fijo: administracion@sevify.es
+    const destinationEmail = "administracion@sevify.es"
+
+    // Si no hay configuración SMTP, simular envío exitoso para desarrollo
+    if (!process.env.SMTP_HOST) {
+      console.log("📧 Mensaje de contacto recibido:", {
+        name,
+        email,
+        subject,
+        message,
+        destinationEmail: "administracion@sevify.es", // Mostrar en consola a dónde se enviaría
+      })
+      return NextResponse.json(
+        {
+          message: "Mensaje recibido correctamente (modo desarrollo)",
+          sentTo: "administracion@sevify.es",
+        },
+        { status: 200 },
+      )
+    }
+
+    // Configurar nodemailer solo si las variables de entorno están disponibles
+    const nodemailer = await import("nodemailer")
+
+    const transporter = nodemailer.createTransport({
       host: process.env.SMTP_HOST,
       port: Number.parseInt(process.env.SMTP_PORT || "587"),
-      secure: false, // true para 465, false para otros puertos
+      secure: process.env.SMTP_PORT === "465", // true para puerto 465, false para otros puertos
       auth: {
         user: process.env.SMTP_USER,
         pass: process.env.SMTP_PASS,
       },
     })
 
-    // Configurar el email
+    // Email principal - siempre a administracion@sevify.es
     const mailOptions = {
-      from: process.env.SMTP_FROM,
-      to: process.env.CONTACT_EMAIL,
+      from: process.env.SMTP_FROM || `"Formulario Web" <noreply@sevify.es>`,
+      to: destinationEmail, // Usar siempre este email
       subject: `Nuevo mensaje de contacto: ${subject}`,
       html: `
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
@@ -48,13 +76,12 @@ export async function POST(request: NextRequest) {
           </div>
         </div>
       `,
-      // Email de respuesta automática al usuario
-      replyTo: email,
+      replyTo: email, // Para que puedan responder directamente al remitente
     }
 
     // Email de confirmación al usuario
     const confirmationMailOptions = {
-      from: process.env.SMTP_FROM,
+      from: process.env.SMTP_FROM || `"Sevify" <noreply@sevify.es>`,
       to: email,
       subject: "Hemos recibido tu mensaje - Sevify",
       html: `
@@ -66,7 +93,7 @@ export async function POST(request: NextRequest) {
           <div style="background-color: #f5f5f5; padding: 20px; border-radius: 8px; margin: 20px 0;">
             <h3 style="margin-top: 0; color: #333;">Resumen de tu mensaje:</h3>
             <p><strong>Asunto:</strong> ${subject}</p>
-            <p><strong>Mensaje:</strong> ${message}</p>
+            <p><strong>Mensaje:</strong> ${message.substring(0, 150)}${message.length > 150 ? "..." : ""}</p>
           </div>
           
           <p>Mientras tanto, puedes seguirnos en nuestras redes sociales o visitar nuestro sitio web para conocer más sobre nuestros servicios.</p>
@@ -75,21 +102,43 @@ export async function POST(request: NextRequest) {
             <p style="color: #D86217; font-weight: bold;">Equipo Sevify</p>
             <p style="color: #888; font-size: 14px;">
               Sevilla, España<br>
-              info@sevify.com<br>
-              +34 954 123 456
+              administracion@sevify.es
             </p>
           </div>
         </div>
       `,
     }
 
-    // Enviar ambos emails
-    await transporter.sendMail(mailOptions)
-    await transporter.sendMail(confirmationMailOptions)
+    try {
+      // Enviar email principal
+      await transporter.sendMail(mailOptions)
 
-    return NextResponse.json({ message: "Email enviado correctamente" }, { status: 200 })
+      // Enviar email de confirmación
+      await transporter.sendMail(confirmationMailOptions)
+
+      return NextResponse.json(
+        {
+          message: "Email enviado correctamente",
+          sentTo: "administracion@sevify.es",
+        },
+        { status: 200 },
+      )
+    } catch (emailError) {
+      console.error("Error al enviar email:", emailError)
+      return NextResponse.json(
+        {
+          error: "Error al enviar el email. Por favor, inténtalo de nuevo más tarde.",
+        },
+        { status: 500 },
+      )
+    }
   } catch (error) {
-    console.error("Error sending email:", error)
-    return NextResponse.json({ error: "Error interno del servidor" }, { status: 500 })
+    console.error("Error en el procesamiento del formulario:", error)
+    return NextResponse.json(
+      {
+        error: "Error interno del servidor. Por favor, inténtalo de nuevo.",
+      },
+      { status: 500 },
+    )
   }
 }
