@@ -133,7 +133,7 @@ export default function RootLayout({
       <head>
         <UltraAdvancedSEO />
         <GoogleIndexingOptimizer />
-
+        
         {/* Meta tags específicos para indexación rápida de Google */}
         <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
         <meta name="google" content="notranslate" />
@@ -149,6 +149,17 @@ export default function RootLayout({
 
         {/* Preconnect para recursos críticos */}
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-NMGQX6HX63"></script>
+          <script
+            dangerouslySetInnerHTML={{
+              __html: `
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+                gtag('config', 'G-NMGQX6HX63');
+              `,
+            }}
+          ></script>
       </head>
       <body className={inter.className}>
         <a href="#main" className="skip-link">
@@ -158,14 +169,7 @@ export default function RootLayout({
           {children}
         </ThemeProvider>
       </body>
-          <script async src="https://www.googletagmanager.com/gtag/js?id=G-NMGQX6HX63"></script>
-          <script>
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-
-            gtag('config', 'G-NMGQX6HX63');
-          </script>
+          
     </html>
   )
 }
