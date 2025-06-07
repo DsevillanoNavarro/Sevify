@@ -101,7 +101,7 @@ export function About() {
           </h2>
 
           <p className="text-muted-foreground text-lg">
-            Conoce más sobre nuestra agencia, nuestra historia y los valores que nos impulsan a crear soluciones web
+            Conoce más sobre nosotros, nuestra historia y los valores que nos impulsan a crear soluciones web
             innovadoras.
           </p>
         </motion.div>

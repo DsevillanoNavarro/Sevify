@@ -41,7 +41,7 @@ export function UltraAdvancedSEO() {
             "@context": "https://schema.org",
             "@type": "LocalBusiness",
             name: "Sevify",
-            description: "Agencia de diseño web profesional en Sevilla",
+            description: "Diseño web profesional en Sevilla",
             url: "https://sevify.es",
             address: {
               "@type": "PostalAddress",

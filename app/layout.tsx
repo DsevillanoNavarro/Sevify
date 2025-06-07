@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     template: "%s | Sevify - Diseño Web Profesional",
   },
   description:
-    "Sevify crea experiencias digitales con diseño web minimalista, interfaces intuitivas y alto rendimiento. Agencia de diseño web profesional en Sevilla, Andalucía.",
+    "Sevify crea experiencias digitales con diseño web minimalista, interfaces intuitivas y alto rendimiento. Diseño web profesional en Sevilla, Andalucía.",
   keywords: [
     "diseño web Sevilla",
     "desarrollo web profesional",
@@ -60,11 +60,11 @@ export const metadata: Metadata = {
     url: "https://sevify.es",
     title: "Sevify | Diseño Web Moderno y Profesional en Sevilla",
     description:
-      "Agencia de diseño web especializada en crear experiencias digitales únicas. Desarrollo web profesional en Sevilla con enfoque minimalista y funcional.",
+      "Creamos experiencias digitales únicas con diseño web moderno y desarrollo profesional.",
     siteName: "Sevify",
     images: [
       {
-        url: "/og-image.jpg",
+        url: "/logo.png",
         width: 1200,
         height: 630,
         alt: "Sevify - Diseño Web Profesional en Sevilla",
