@@ -10,7 +10,7 @@ interface SchemaMarkupProps {
 
 export function SchemaMarkup({ title, description }: SchemaMarkupProps) {
   const pathname = usePathname()
-  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://sevify.com"
+  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://sevify.es"
   const currentUrl = `${baseUrl}${pathname}`
 
   const pageTitle = title || "Sevify | Diseño Web Moderno, Minimalista y Funcional"

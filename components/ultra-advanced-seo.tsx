@@ -42,7 +42,7 @@ export function UltraAdvancedSEO() {
             "@type": "LocalBusiness",
             name: "Sevify",
             description: "Agencia de diseño web profesional en Sevilla",
-            url: "https://sevify.com",
+            url: "https://sevify.es",
             address: {
               "@type": "PostalAddress",
               streetAddress: "Calle Sierpes 48",

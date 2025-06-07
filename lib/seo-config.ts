@@ -1,6 +1,6 @@
 export const seoConfig = {
   siteName: "Sevify",
-  siteUrl: process.env.NEXT_PUBLIC_SITE_URL || "https://sevify.com",
+  siteUrl: process.env.NEXT_PUBLIC_SITE_URL || "https://sevify.es",
   defaultTitle: "Sevify | Diseño Web Moderno, Minimalista y Funcional",
   defaultDescription:
     "Sevify crea experiencias digitales con diseño web minimalista, interfaces intuitivas y alto rendimiento. Inspirado en la estética y la usabilidad.",

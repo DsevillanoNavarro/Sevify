@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Términos y Condiciones | Sevify",
     description: "Términos y condiciones de uso de los servicios de Sevify",
-    url: "https://sevify.com/terms",
+    url: "https://sevify.es/terms",
   },
 }
 

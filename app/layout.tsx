@@ -14,7 +14,7 @@ const inter = Inter({
 })
 
 export const metadata: Metadata = {
-  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || "https://sevify.com"),
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || "https://sevify.es"),
   title: {
     default: "Sevify | Diseño Web Moderno, Minimalista y Funcional en Sevilla",
     template: "%s | Sevify - Diseño Web Profesional",
@@ -38,7 +38,7 @@ export const metadata: Metadata = {
     "optimización web SEO",
     "mantenimiento web",
   ],
-  authors: [{ name: "Sevify", url: "https://sevify.com" }],
+  authors: [{ name: "Sevify", url: "https://sevify.es" }],
   creator: "Sevify",
   publisher: "Sevify",
   formatDetection: {
@@ -57,7 +57,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "es_ES",
-    url: "https://sevify.com",
+    url: "https://sevify.es",
     title: "Sevify | Diseño Web Moderno y Profesional en Sevilla",
     description:
       "Agencia de diseño web especializada en crear experiencias digitales únicas. Desarrollo web profesional en Sevilla con enfoque minimalista y funcional.",
@@ -158,6 +158,14 @@ export default function RootLayout({
           {children}
         </ThemeProvider>
       </body>
+          <script async src="https://www.googletagmanager.com/gtag/js?id=G-NMGQX6HX63"></script>
+          <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'G-NMGQX6HX63');
+          </script>
     </html>
   )
 }

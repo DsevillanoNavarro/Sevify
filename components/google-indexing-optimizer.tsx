@@ -12,10 +12,10 @@ export function GoogleIndexingOptimizer() {
         "@context": "https://schema.org",
         "@type": "WebSite",
         name: "Sevify",
-        url: "https://sevify.com",
+        url: "https://sevify.es",
         potentialAction: {
           "@type": "SearchAction",
-          target: "https://sevify.com/search?q={search_term_string}",
+          target: "https://sevify.es/search?q={search_term_string}",
           "query-input": "required name=search_term_string",
         },
       })

@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Política de Privacidad | Sevify",
     description: "Política de privacidad de Sevify - Cómo protegemos y utilizamos tu información personal",
-    url: "https://sevify.com/privacy",
+    url: "https://sevify.es/privacy",
   },
 }
 

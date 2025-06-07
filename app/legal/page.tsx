@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Aviso Legal | Sevify",
     description: "Aviso legal e información corporativa de Sevify",
-    url: "https://sevify.com/legal",
+    url: "https://sevify.es/legal",
   },
 }
 

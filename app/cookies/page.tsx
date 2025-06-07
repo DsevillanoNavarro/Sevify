@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Política de Cookies | Sevify",
     description: "Información sobre el uso de cookies en el sitio web de Sevify",
-    url: "https://sevify.com/cookies",
+    url: "https://sevify.es/cookies",
   },
 }
 

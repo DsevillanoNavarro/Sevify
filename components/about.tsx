@@ -146,7 +146,7 @@ export function About() {
                 ))}
               </div>
 
-              <Button className="mt-4 group" onClick={() => window.open("https://sevify.com/about", "_blank")}>
+              <Button className="mt-4 group" onClick={() => window.open("https://sevify.es/about", "_blank")}>
                 Descubre más
                 <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
               </Button>

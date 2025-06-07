@@ -3,8 +3,8 @@ export function generateOrganizationSchema() {
     "@context": "https://schema.org",
     "@type": "Organization",
     name: "Sevify",
-    url: process.env.NEXT_PUBLIC_SITE_URL || "https://sevify.com",
-    logo: `${process.env.NEXT_PUBLIC_SITE_URL || "https://sevify.com"}/logo.png`,
+    url: process.env.NEXT_PUBLIC_SITE_URL || "https://sevify.es",
+    logo: `${process.env.NEXT_PUBLIC_SITE_URL || "https://sevify.es"}/logo.png`,
     sameAs: [
       "https://twitter.com/sevify",
       "https://www.instagram.com/sevify/",
@@ -34,7 +34,7 @@ export function generateWebPageSchema(title: string, description: string, url: s
       name: "Sevify",
       logo: {
         "@type": "ImageObject",
-        url: `${process.env.NEXT_PUBLIC_SITE_URL || "https://sevify.com"}/logo.png`,
+        url: `${process.env.NEXT_PUBLIC_SITE_URL || "https://sevify.es"}/logo.png`,
       },
     },
   }

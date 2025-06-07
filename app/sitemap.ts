@@ -1,7 +1,7 @@
 import type { MetadataRoute } from "next"
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://sevify.com"
+  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://sevify.es"
   const currentDate = new Date()
 
   // URLs principales con máxima prioridad para indexación rápida
