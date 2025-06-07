@@ -160,6 +160,9 @@ export default function RootLayout({
               `,
             }}
           ></script>
+
+        <link rel="icon" href="/favicon-32x32.png" sizes="32x32" type="image/png" />
+        <link rel="shortcut icon" href="/favicon.ico" />
       </head>
       <body className={inter.className}>
         <a href="#main" className="skip-link">
